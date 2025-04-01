@@ -1,0 +1,142 @@
+/* font-family: "Quicksand", sans-serif; */
+/* font-weight: 300-700 */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --toggle-button-sun-bg-color: #eee8e1;
+  --toggle-button-sun-color: #777;
+  --toggle-button-moon-bg-color: #464646;
+  --toggle-button-moon-color: #ddd;
+
+  --container-dark-bg-color: #262626;
+  --red-circle: #eb001b;
+  --orange-circle: #ff5f00;
+  --card-text-color: #777;
+  --card-dark-text-color: #ccc;
+  --card-bg-color: #262626;
+  --card-dark-bg-color: #353535;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+}
+/* ----------------------------------- */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.container.dark {
+  background-color: var(--container-dark-bg-color);
+}
+.toggle {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: var(--toggle-button-sun-bg-color);
+  position: fixed;
+  right: 4rem;
+  top: 4rem;
+
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.toggle i {
+  font-size: 4rem;
+  color: var(--toggle-button-sun-color);
+}
+.container.dark .toggle {
+  background-color: var(--toggle-button-moon-bg-color);
+}
+.container.dark .toggle i {
+  color: var(--toggle-button-moon-color);
+}
+.card {
+  width: 48rem;
+  height: 25rem;
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  position: relative;
+}
+.container.dark .card {
+  background-color: var(--card-dark-bg-color);
+}
+.card__map--img {
+  width: 35rem;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.2;
+  z-index: 1;
+}
+.card__left,
+.card-right {
+  z-index: 10;
+}
+.card__left {
+  /* position absolute for the z-index */
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  padding: 1rem 0 1rem 3rem;
+  color: var(--card-text-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container.dark .card__left {
+  color: var(--card-dark-text-color);
+}
+.card__left h3 {
+  font-size: 2.5rem;
+}
+.card__chip--img {
+  width: 6rem;
+}
+.card__left--num {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+.card__left--text {
+  font-size: 1.1rem;
+}
+.card__left--date {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.card__left--holder {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.card-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+}
+.circle {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+.red-circle {
+  background-color: var(--red-circle);
+}
+.orange-circle {
+  background-color: var(--orange-circle);
+  margin-left: -2rem;
+  opacity: 0.7;
+}
